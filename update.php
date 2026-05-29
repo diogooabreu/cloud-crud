@@ -28,6 +28,9 @@ if (isset($_GET['id'])) {
             $email = $row['email'];
         }
     ?>
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <h1>Doodler</h1>
+        </nav>
 
         <h2>Doodlers details - Update Form</h2>
         <form action="" method="post">

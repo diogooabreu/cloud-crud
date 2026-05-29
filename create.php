@@ -2,6 +2,9 @@
 <html>
 <title>Doodler Database</title>
 <body>
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+ <h1>Doodler</h1>
+</nav>
 <h2>Create a Doodler</h2>
 <form action="" method="POST">
   <fieldset>

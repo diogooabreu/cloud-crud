@@ -8,6 +8,9 @@ include "dbconfig.php";
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <h1>Doodler</h1>
+    </nav>
 
     <div class="container">
         <h2>Doodlers Details</h2>
