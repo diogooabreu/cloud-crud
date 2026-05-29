@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>Student Database</title>
+<title>Doodler Database</title>
 <body>
-<h2>Student Form</h2>
+<h2>Create a Doodler</h2>
 <form action="" method="POST">
   <fieldset>
-    <legend>Student information:</legend>
+    <legend>Doodler information:</legend>
     Name:<br>
     <input type="text" name="name"> <br>
     Age:<br>
@@ -25,11 +25,11 @@ include "dbconfig.php";
     $name = $_POST['name'];
     $age = $_POST['age'];
     $email = $_POST['email'];
-    $sql = "INSERT INTO `students`(`name`, `age`, `email`) VALUES ('$name','$age','$email')";
+    $sql = "INSERT INTO `doodlers`(`name`, `age`, `email`) VALUES ('$name','$age','$email')";
     $result = $conn->query($sql);
     if ($result == TRUE) {
       echo "New record created successfully.";
-      header('Location: view-student.php');
+      header('Location: view.php');
     }else{
       echo "Error:". $sql . "<br>". $conn->error;
     }

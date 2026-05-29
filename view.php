@@ -4,13 +4,13 @@ include "dbconfig.php";
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Database</title>
+    <title>Doodler Database</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
 
     <div class="container">
-        <h2>Student Details</h2>
+        <h2>Doodlers Details</h2>
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +24,7 @@ include "dbconfig.php";
     </thead>
     <tbody>
         <?php
-                $sql = "SELECT * FROM students";
+                $sql = "SELECT * FROM doodlers";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -34,9 +34,10 @@ include "dbconfig.php";
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['age']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><a class="btn btn-info" href="update-student.php?id=<?php echo $row['id']; ?>">Edit</a>
+                    <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>">Edit</a>
                      &nbsp;
-                     <a class="btn btn-danger" href="delete-student.php?id=<?php echo $row['id']; ?>">Delete</a>
+                     <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
+                     <a class="btn btn-success" href="create.php?id=<?php echo $row['id']; ?>">Create</a>
                     </td>
                     </tr>
         <?php       }

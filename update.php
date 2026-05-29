@@ -5,11 +5,11 @@ include "dbconfig.php";
         $name = $_POST['name'];
         $age = $_POST['age'];
         $email = $_POST['email'];
-        $sql = "UPDATE `students` SET `name`='$name',`age`='$age',`email`='$email' WHERE `id`='$stu_id'";
+        $sql = "UPDATE `doodlers` SET `name`='$name',`age`='$age',`email`='$email' WHERE `id`='$stu_id'";
         $result = $conn->query($sql);
         if ($result == TRUE) {
             echo "Record updated successfully.";
-            header('Location: view-student.php');
+            header('Location: view.php');
         }else{
             echo "Error:" . $sql . "<br>" . $conn->error;
         }
@@ -18,7 +18,7 @@ include "dbconfig.php";
 
 if (isset($_GET['id'])) {
     $stu_id = $_GET['id'];
-    $sql = "SELECT * FROM students WHERE id='$stu_id'";
+    $sql = "SELECT * FROM doodlers WHERE id='$stu_id'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
         }
     ?>
 
-        <h2>Student details Update Form</h2>
+        <h2>Doodlers details - Update Form</h2>
         <form action="" method="post">
           <fieldset>
             <legend>Personal information:</legend>
@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
 
     <?php
     } else{
-        header('Location: view-student.php');
+        header('Location: view.php');
     }
 }
 ?>
